@@ -13,7 +13,18 @@ temp_directory: '/tmp'
 classes:
     - java
     - gradle
+    - atg
     - endeca
+    - eclipse
+    - swapfile
+    - oracle_xe
+    - oracle_users
+    - sqldeveloper
+    - orawls::urandomfix
+    - orawls::weblogic
+    - orautils
+    - weblogic
+    - vagrant
 
 # Parameters For Eclipse install (Vagrant)
 

@@ -1,4 +1,4 @@
-class endeca::cas ( $cas_archive, $cas_source_archive, $cas_version, $install_dir, $cas_install_dir, $install_config_ini, $endeca_tools_root, $endeca_tools_conf, $cas_bin_file, $cas_server_port, $cas_shutdown_port, $cas_server_host, $user, $group, $logoutput ) {
+class endeca::cas ( $cas_archive, $cas_source_archive, $cas_version, $install_dir, $cas_install_dir, $install_config_file, $endeca_tools_root, $endeca_tools_conf, $cas_bin_file, $cas_server_port, $cas_shutdown_port, $cas_server_host, $user, $group, $logoutput ) {
 
     $cas_home = "${cas_install_dir}/${cas_version}"
     $temp_directory = hiera('temp_directory')
@@ -32,16 +32,16 @@ class endeca::cas ( $cas_archive, $cas_source_archive, $cas_version, $install_di
             mode => 0755
         }   
         ->
-        file { "${temp_directory}/${install_config_ini}" :
+        file { "${temp_directory}/${install_config_file}" :
             owner   => "${user}",
             mode    => 0755,
-            content => template("${module_name}/${install_config_ini}.erb")
+            content => template("${module_name}/${install_config_file}.erb")
         }               
         ->
         exec { 'execute cas bin':
             cwd => "${temp_directory}",
             timeout => 0,
-            command => "./${cas_bin_file} --silent --target ${install_dir} --endeca_tools_root ${endeca_tools_root} --endeca_tools_conf ${endeca_tools_conf} < ${temp_directory}/${install_config_ini}",
+            command => "./${cas_bin_file} -i silent -f ${temp_directory}/${install_config_file}",
             logoutput => "${logoutput}",
             creates => "${cas_home}",
         }
@@ -53,7 +53,7 @@ class endeca::cas ( $cas_archive, $cas_source_archive, $cas_version, $install_di
         -> 
         exec { 'cleanup cas temp':
             cwd => "${temp_directory}",
-            command => "rm -rf ${temp_directory}/${cas_archive} ${temp_directory}/${cas_bin_file} ${temp_directory}/${install_config_ini}"
+            command => "rm -rf ${temp_directory}/${cas_archive} ${temp_directory}/${cas_bin_file} ${temp_directory}/${install_config_file}"
         }
         file { "/etc/profile.d/cas.sh":
           content => "export CAS_ROOT=${cas_home}\n"
