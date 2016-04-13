@@ -1,0 +1,33 @@
+# Wed Apr 13 07:39:28 UTC 2016
+# Replay feature output
+# ---------------------
+# This file was built by the Replay feature of InstallAnywhere.
+# It contains variables that were set by Panels, Consoles or Custom Code.
+
+
+
+#Choose Install Folder
+#---------------------
+USER_INSTALL_DIR=<%= @install_dir %>
+
+#Choose Install Set
+#------------------
+CHOSEN_FEATURE_LIST=PS,ACS,ACA
+CHOSEN_INSTALL_FEATURE_LIST=PS,ACS,ACA
+CHOSEN_INSTALL_SET=Typical
+
+#Endeca Application Controller Service Information - Service Port
+#----------------------------------------------------------------
+ETOOLS_HTTP_PORT=<%= @http_service_listen_port %>
+
+#Endeca Application Controller Service Information - Shutdown port
+#-----------------------------------------------------------------
+ETOOLS_SERVER_PORT=<%= @http_service_shutdown_port %>
+
+#Endeca Application Controller Service Information - MDEX Engine root
+#--------------------------------------------------------------------
+EAC_MDEX_ROOT=<%= @mdex_home %>
+
+#Install
+#-------
+-fileOverwrite_<%= @ps_home %>/Uninstall/Uninstall_Oracle Commerce Guided Search Platform Services 11.2.0.lax=Yes
