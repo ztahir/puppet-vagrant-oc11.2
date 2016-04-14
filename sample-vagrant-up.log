@@ -1,0 +1,361 @@
+Nagarajans-MacBook-Pro:puppet-vagrant-oc11.2 Naga$ vagrant up     
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Importing base box 'naga/oel66'...
+==> default: Matching MAC address for NAT networking...
+==> default: Setting the name of the VM: OC11.2VM
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: hostonly
+==> default: Forwarding ports...
+    default: 8006 => 8006 (adapter 1)
+    default: 15000 => 15000 (adapter 1)
+    default: 15002 => 15002 (adapter 1)
+    default: 22 => 2222 (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+    default: Warning: Connection timeout. Retrying...
+    default: Warning: Remote connection disconnect. Retrying...
+    default: Warning: Connection timeout. Retrying...
+    default: 
+    default: Vagrant insecure key detected. Vagrant will automatically replace
+    default: this with a newly generated keypair for better security.
+    default: 
+    default: Inserting generated public key within guest...
+    default: Removing insecure key from the guest if it's present...
+    default: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+    default: The guest additions on this VM do not match the installed version of
+    default: VirtualBox! In most cases this is fine, but in rare cases it can
+    default: prevent things such as shared folders from working properly. If you see
+    default: shared folder errors, please make sure the guest additions within the
+    default: virtual machine match the version of VirtualBox you have installed on
+    default: your host and reload your VM.
+    default: 
+    default: Guest Additions Version: 4.3.20
+    default: VirtualBox Version: 5.0
+==> default: Configuring and enabling network interfaces...
+==> default: Mounting shared folders...
+    default: /vagrant => /Users/Naga/Work/puppet-vagrant-oc11.2
+    default: /Software => /Users/Naga/Downloads/Commerce11.2
+    default: /tmp/vagrant-puppet/modules-4e2f5b0cb80812d231a0b957c38d2717 => /Users/Naga/Work/puppet-vagrant-oc11.2/modules/forge
+    default: /tmp/vagrant-puppet/modules-4a1cd5ba75af373a49f7036846cc18a6 => /Users/Naga/Work/puppet-vagrant-oc11.2/modules/custom
+    default: /tmp/vagrant-puppet/manifests-a11d1078b1b1f2e3bdea27312f6ba513 => /Users/Naga/Work/puppet-vagrant-oc11.2/manifests
+==> default: Running provisioner: shell...
+    default: Running: inline script
+==> default: Running provisioner: shell...
+    default: Running: inline script
+==> default: Running provisioner: puppet...
+==> default: Running Puppet with site.pp...
+==> default: sh: sqlplus: command not found
+==> default: sh: sqlplus: command not found
+==> default: Notice: Scope(Orautils::Nodemanagerautostart[autostart atg_domain]): wlHome: /opt/oracle/product/middleware12c/wlserver
+==> default: Notice: Compiled catalog for localhost in environment production in 11.21 seconds
+==> default: Notice: /Stage[main]/Weblogic::Nodemanagerservice/Orautils::Nodemanagerautostart[autostart atg_domain]/File[/etc/init.d/nodemanager_atg_domain]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Nodemanagerservice/Orautils::Nodemanagerautostart[autostart atg_domain]/Exec[chkconfig nodemanager_atg_domain]/returns: executed successfully
+==> default: Notice: /Stage[main]/Swapfile/Exec[Create swap file]/returns: 1048576+0 records in
+==> default: Notice: /Stage[main]/Swapfile/Exec[Create swap file]/returns: 1048576+0 records out
+==> default: Notice: /Stage[main]/Swapfile/Exec[Create swap file]/returns: 2147483648 bytes (2.1 GB) copied, 11.1739 s, 192 MB/s
+==> default: Notice: /Stage[main]/Swapfile/Exec[Create swap file]/returns: executed successfully
+==> default: Notice: /Stage[main]/Swapfile/Exec[Attach swap file]/returns: mkswap: /home/swapfile: warning: don't erase bootbits sectors
+==> default: 
+==> default: Notice: /Stage[main]/Swapfile/Exec[Attach swap file]/returns:         on whole disk. Use -f to force.
+==> default: Notice: /Stage[main]/Swapfile/Exec[Attach swap file]/returns: Setting up swapspace version 1, size = 2097148 KiB
+==> default: Notice: /Stage[main]/Swapfile/Exec[Attach swap file]/returns: no label, UUID=94e72d1b-fe09-407e-98b8-34deab598da9
+==> default: Notice: /Stage[main]/Swapfile/Exec[Attach swap file]/returns: executed successfully
+==> default: Notice: /Stage[main]/Swapfile/File_line[swap_fstab_line_/home/swapfile]/ensure: created
+==> default: Notice: /Stage[main]/Orawls::Urandomfix/Exec[set urandom /etc/sysconfig/rngd]/returns: executed successfully
+==> default: Notice: /Stage[main]/Orawls::Urandomfix/Service[rngd]/ensure: ensure changed 'stopped' to 'running'
+==> default: Notice: /Stage[main]/Sqldeveloper/Package[sqldeveloper]/ensure: created
+==> default: Notice: /Stage[main]/Sqldeveloper/Exec[fix sqldeveloper permissions]/returns: executed successfully
+==> default: Notice: /Stage[main]/Sqldeveloper/File[/home/vagrant/.sqldeveloper]/ensure: created
+==> default: Notice: /Stage[main]/Sqldeveloper/File[/home/vagrant/.sqldeveloper/system4.0.3.16.84]/ensure: created
+==> default: Notice: /Stage[main]/Orautils/File[/opt/scripts]/ensure: created
+==> default: Notice: /Stage[main]/Orautils/File[/opt/scripts/wls]/ensure: created
+==> default: Notice: /Stage[main]/Orautils/File[stopWeblogicAdmin.sh]/ensure: created
+==> default: Notice: /Stage[main]/Orautils/File[startWeblogicAdmin.sh]/ensure: created
+==> default: Notice: /Stage[main]/Orautils/File[startNodeManager.sh]/ensure: created
+==> default: Notice: /Stage[main]/Orautils/File[cleanOracleEnvironment.sh]/ensure: created
+==> default: Notice: /Stage[main]/Orautils/File[showStatus.sh]/ensure: created
+==> default: Notice: /Stage[main]/Common/Exec[/opt/oracle/product]/returns: executed successfully
+==> default: Notice: /Stage[main]/Common/File[/etc/profile.d/facters.sh]/ensure: created
+==> default: Notice: /Stage[main]/Eclipse/Exec[extract eclipse tar.gz]/returns: executed successfully
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[extract oracle xe]/returns: executed successfully
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[execute oracle rpm install]/returns: Preparing...                ##################################################
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[execute oracle rpm install]/returns: oracle-xe                   ##################################################
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[execute oracle rpm install]/returns: Executing post-install steps...
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[execute oracle rpm install]/returns: You must run '/etc/init.d/oracle-xe configure' as the root user to configure the database.
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[execute oracle rpm install]/returns: executed successfully
+==> default: Notice: /Stage[main]/Oracle_xe/File[/tmp/oracle_xe_install_config.ini]/ensure: defined content as '{md5}ec018a6c4a256d2b035fc796471299e0'
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: 
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: Oracle Database 11g Express Edition Configuration
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: -------------------------------------------------
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: This will configure on-boot properties of Oracle Database 11g Express 
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: Edition.  The following questions will determine whether the database should 
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: be starting upon system boot, the ports it will use, and the passwords that 
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: will be used for database accounts.  Press <Enter> to accept the defaults. 
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: Ctrl-C will abort.
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: 
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: Specify the HTTP port that will be used for Oracle Application Express [8080]:
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: Specify a port that will be used for the database listener [1521]:
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: Specify a password to be used for database accounts.  Note that the same
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: password will be used for SYS and SYSTEM.  Oracle recommends the use of 
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: different passwords for each database account.  This can be done after 
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: initial configuration:
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: Confirm the password:
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: 
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: Do you want Oracle Database 11g Express Edition to be started on boot (y/n) [y]:
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: Starting Oracle Net Listener...Done
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: Configuring database...Done
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: Starting Oracle Database 11g Express Edition instance...Done
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: Installation completed successfully.
+==> default: 
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[configure oracle xe]/returns: executed successfully
+==> default: Notice: /Stage[main]/Eclipse/Exec[move eclipse]/returns: executed successfully
+==> default: Notice: /Stage[main]/Eclipse/Exec[fix eclipse permissions]/returns: executed successfully
+==> default: Notice: /Stage[main]/Java/Exec[extract jdk]/returns: executed successfully
+==> default: Notice: /Stage[main]/Gradle/Exec[extract gradle]/returns: executed successfully
+==> default: Notice: /Stage[main]/Gradle/File[/opt/gradle]/ensure: created
+==> default: Notice: /Stage[main]/Gradle/Exec[move gradle]/returns: executed successfully
+==> default: Notice: /Stage[main]/Gradle/Exec[fix gradle permissions]/returns: executed successfully
+==> default: Notice: /Stage[main]/Gradle/Exec[cleanup gradle temp]/returns: executed successfully
+==> default: Notice: /Stage[main]/Gradle/File[/etc/profile.d/gradle.sh]/ensure: defined content as '{md5}940bf7717275137a9492d347c500b5b8'
+==> default: Notice: /Stage[main]/Endeca::Mdex/Exec[extract mdex zip]/returns: executed successfully
+==> default: Notice: /Stage[main]/Sqldeveloper/File[/home/vagrant/.sqldeveloper/system4.0.3.16.84/o.jdeveloper.db.connection.12.1.3.2.41.140908.1359]/ensure: created
+==> default: Notice: /Stage[main]/Orautils/File[stopNodeManager.sh]/ensure: created
+==> default: Notice: /Stage[main]/Java/File[/opt/oracle/product/java]/ensure: created
+==> default: Notice: /Stage[main]/Java/Exec[move jdk]/returns: executed successfully
+==> default: Notice: /Stage[main]/Eclipse/File[/home/vagrant/Desktop/Eclipse.desktop]/ensure: defined content as '{md5}317f4791ec7851fa6cdc1b2ae368cbf0'
+==> default: Notice: /Stage[main]/Eclipse/Exec[cleanup eclipse temp]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca/File[/opt/oracle/product/endeca]/ensure: created
+==> default: Notice: /Stage[main]/Endeca/File[/opt/oracle/product/endeca/apps]/ensure: created
+==> default: Notice: /Stage[main]/Java/File[/etc/profile.d/java.sh]/ensure: defined content as '{md5}6235ef5ee718908aedc74c1d07d614b7'
+==> default: Notice: /Stage[main]/Java/Exec[fix permissions]/returns: executed successfully
+==> default: Notice: /Stage[main]/Java/Exec[cleanup java temp]/returns: executed successfully
+==> default: Notice: /Stage[main]/Atg/Exec[extract atg zip]/returns: executed successfully
+==> default: Notice: /Stage[main]/Atg/File[fix atg bin permissions]/owner: owner changed 'root' to 'vagrant'
+==> default: Notice: /Stage[main]/Atg/File[fix atg bin permissions]/mode: mode changed '0644' to '0755'
+==> default: Notice: /Stage[main]/Vagrant/Exec[fix vagrant home permissions]/returns: executed successfully
+==> default: Notice: /Stage[main]/Atg/File[/tmp/installer.properties]/ensure: defined content as '{md5}10684f3c8671309f6d951330363bf22c'
+==> default: Notice: /Stage[main]/Atg/File[atg install folder]/ensure: created
+==> default: Notice: /Stage[main]/Atg/Exec[execute atg bin]/returns: executed successfully
+==> default: Notice: /Stage[main]/Atg/Exec[fix atg permissions]/returns: executed successfully
+==> default: Notice: /Stage[main]/Atg/Exec[cleanup atg temp]/returns: executed successfully
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Orawls::Utils::Orainst[weblogic orainst 1212]/File[/etc/oraInst.loc]/ensure: created
+==> default: Notice: /Stage[main]/Atg/File[/etc/profile.d/atg.sh]/ensure: defined content as '{md5}6a59d5cad387d6ffbf0785ad9183b9cc'
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Wls_directory_structure[weblogic structure 1212]/ensure: defined 'ensure' as 'present'
+==> default: Notice: /Stage[main]/Orawls::Weblogic/File[/tmp/weblogic_silent_install.xml]/ensure: created
+==> default: Notice: /Stage[main]/Orawls::Weblogic/File[/tmp/wls_121200.jar]/ensure: defined content as '{md5}66380e1b5143949f0169e9b62e9272fa'
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: Extracting files.........
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: Starting Oracle Universal Installer
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: 
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: Checking if CPU speed is above 300 MHz.   Actual 1999.948 MHz    Passed
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: Checking swap space: must be greater than 512 MB.   Actual 3112952 MB    Passed
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: Checking if this platform requires a 64-bit JVM.   Actual 64    Passed (64-bit not required)
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: Checking temp space: must be greater than 300 MB.   Actual 44059 MB    Passed
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: 
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: 
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: Preparing to launch the Oracle Universal Installer from /tmp/OraInstall2016-04-14_04-23-48AM
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=512m; support was removed in 8.0
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: Log: /opt/oracle/product/oraInventory/logs/install2016-04-14_04-23-48AM.log
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: Copyright (c) 1996, 2013, Oracle and/or its affiliates. All rights reserved.
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: Reading response file..
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: Verifying data......
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: Copying Files...
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: -----------20%----------40%----------60%----------80%--------100%
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: 
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: The installation of WebLogic Server 12.1.2.0.0 completed successfully.
+==> default: Notice: /Stage[main]/Orawls::Weblogic/Exec[install weblogic 1212]/returns: executed successfully
+==> default: Notice: /Stage[main]/Vagrant/Exec[/home/vagrant/workspace]/returns: executed successfully
+==> default: Notice: /Stage[main]/Vagrant/File[Fix permissions ${workspace_directory}]/owner: owner changed 'root' to 'vagrant'
+==> default: Notice: /Stage[main]/Vagrant/File[Fix permissions ${workspace_directory}]/group: group changed 'root' to 'vagrant'
+==> default: Notice: /Stage[main]/Oracle_xe/Exec[cleanup oracle temp]/returns: executed successfully
+==> default: Notice: /Stage[main]/Oracle_xe/File[/etc/profile.d/oracle-xe.sh]/ensure: defined content as '{md5}e06fe19478840d90c6eb8f87ca0f86bc'
+==> default: Notice: /Stage[main]/Oracle_users/Oracle_users::Create_users[atg_ca]/Tablespace[XE/atg_ca_ts]/ensure: created
+==> default: Notice: /Stage[main]/Oracle_users/Oracle_users::Create_users[atg_ca]/Oracle_user[XE/atg_ca]/ensure: created
+==> default: Notice: /Stage[main]/Oracle_users/Oracle_users::Create_users[atg_core]/Tablespace[XE/atg_core_ts]/ensure: created
+==> default: Notice: /Stage[main]/Oracle_users/Oracle_users::Create_users[atg_core]/Oracle_user[XE/atg_core]/ensure: created
+==> default: Notice: /Stage[main]/Oracle_users/Oracle_users::Create_users[atg_catb]/Tablespace[XE/atg_catb_ts]/ensure: created
+==> default: Notice: /Stage[main]/Oracle_users/Oracle_users::Create_users[atg_catb]/Oracle_user[XE/atg_catb]/ensure: created
+==> default: Notice: /Stage[main]/Oracle_users/Oracle_users::Create_users[atg_cata]/Tablespace[XE/atg_cata_ts]/ensure: created
+==> default: Notice: /Stage[main]/Oracle_users/Oracle_users::Create_users[atg_cata]/Oracle_user[XE/atg_cata]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Domains/Wls_setting[default]/user: defined 'user' as 'vagrant'
+==> default: Notice: /Stage[main]/Weblogic::Domains/Wls_setting[default]/weblogic_home_dir: defined 'weblogic_home_dir' as '/opt/oracle/product/middleware12c/wlserver'
+==> default: Notice: /Stage[main]/Weblogic::Domains/Wls_setting[default]/weblogic_user: defined 'weblogic_user' as 'weblogic'
+==> default: Notice: /Stage[main]/Weblogic::Domains/Wls_setting[default]/connect_url: defined 'connect_url' as 't3://localhost:7001'
+==> default: Notice: /Stage[main]/Weblogic::Domains/Wls_setting[default]/weblogic_password: created password
+==> default: Notice: /Stage[main]/Weblogic::Domains/Wls_setting[default]/custom_trust: defined 'custom_trust' as 'false'
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/File[weblogic_domain_folder]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/File[/opt/oracle/product/middleware12c/user_projects/domains]/ensure: created
+==> default: Notice: orawls::domain atg_domain /opt/oracle/product/middleware12c/user_projects/domains/atg_domain 1212 does not exists
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Notify[orawls::domain atg_domain /opt/oracle/product/middleware12c/user_projects/domains/atg_domain 1212 does not exists]/message: defined 'message' as 'orawls::domain atg_domain /opt/oracle/product/middleware12c/user_projects/domains/atg_domain 1212 does not exists'
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[create /data/logs directory]/returns: executed successfully
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/File[/data/logs]/owner: owner changed 'root' to 'vagrant'
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/File[/data/logs]/group: group changed 'root' to 'vagrant'
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/File[/data/logs]/mode: mode changed '0755' to '0775'
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/File[/opt/oracle/product/middleware12c/user_projects/applications]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/File[/tmp/utils.py]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/File[domain.py atg_domain atg_domain]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Java HotSpot(TM) 64-Bit Server VM warning: ignoring option MaxPermSize=256m; support was removed in 8.0
+==> default: 
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: 
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Initializing WebLogic Scripting Tool (WLST) ...
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: 
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Jython scans all the jar files it can find at first startup. Depending on the system, this process may take a few minutes to complete, and WLST may not return a prompt right away.
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: 
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Welcome to WebLogic Server Administration Scripting Shell
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: 
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Type help() for help on available commands
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: 
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Start normal domain... with template /opt/oracle/product/middleware12c/wlserver/common/templates/wls/wls.jar
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Set crossdomain
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Set crossdomain
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Set domain log
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Create machine LocalMachine with type UnixMachine
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: changeDefaultServerAttributes for server AdminServer
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Change AdminServer log
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Set password...
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Set password...
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: write domain...
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Adding WLS Coherence Template
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: set domain password...
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Set nodemanager password
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Exiting...
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: 
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: 
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: Exiting WebLogic Scripting Tool.
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[execwlst atg_domain atg_domain]/returns: executed successfully
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Exec[domain.py atg_domain atg_domain]/returns: executed successfully
+==> default: Notice: /Stage[main]/Weblogic::Domains/Orawls::Domain[atg_domain]/Yaml_setting[domain atg_domain]/ensure: created
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[extract tf zip]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[fix tf unzip content permissions]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[fix tf sh execute permissions]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Tf/File[/tmp/endeca_tf_install_config.rsp]/ensure: defined content as '{md5}fa0795350c9eedfe8ebb7ee40eda2cd1'
+==> default: Notice: /Stage[main]/Endeca::Tf/File[/opt/oracle/product/endeca/ToolsAndFrameworks]/ensure: created
+==> default: Notice: /Stage[main]/Endeca::Tf/File[/opt/oracle/product/oraInventory]/mode: mode changed '0770' to '0755'
+==> default: Notice: /Stage[main]/Endeca::Mdex/File[fix mdex bin permissions]/owner: owner changed 'root' to 'vagrant'
+==> default: Notice: /Stage[main]/Endeca::Mdex/File[fix mdex bin permissions]/mode: mode changed '0555' to '0755'
+==> default: Notice: /Stage[main]/Endeca::Mdex/File[/tmp/endeca_mdex_install_config.properties]/ensure: defined content as '{md5}a5ba943f25fca231a9c4e0c0b56f5800'
+==> default: Notice: /Stage[main]/Endeca::Mdex/Exec[execute mdex bin]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Mdex/Exec[fix mdex permissions]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Mdex/Exec[cleanup mdex temp]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Mdex/File[/etc/profile.d/mdex.sh]/ensure: defined content as '{md5}86997180672d8efca2e000ab59b3ccbf'
+==> default: Notice: /Stage[main]/Endeca::Ps/Exec[extract ps zip]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Ps/File[fix ps bin permissions]/owner: owner changed 'root' to 'vagrant'
+==> default: Notice: /Stage[main]/Endeca::Ps/File[fix ps bin permissions]/mode: mode changed '0644' to '0755'
+==> default: Notice: /Stage[main]/Endeca::Ps/File[/tmp/endeca_ps_complete_install_config.properties]/ensure: defined content as '{md5}414e4243852520a38c0ef3914bdb09b6'
+==> default: Notice: /Stage[main]/Endeca::Tf/File[/opt/oracle/product/oraInventory/oraInst.loc]/ensure: defined content as '{md5}bcdc67bc6de6ee49957896259dcdfdd8'
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Starting Oracle Universal Installer...
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Checking swap space: must be greater than 500 MB.   Actual 3024 MB    Passed
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Preparing to launch Oracle Universal Installer from /tmp/OraInstall2016-04-14_04-33-39AM. Please wait ...Oracle Universal Installer, Version 12.1.0.1.0 Production
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Copyright (C) 1999, 2013, Oracle. All rights reserved.
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: You can find the log of this install session at:
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns:  /opt/oracle/product/oraInventory/logs/installActions2016-04-14_04-33-39AM.log
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: For this silent installation it is assumed that you have read and accepted the license agreement located in /tmp/cd/Disk1/install/./license.txt. If this is not the case, please cancel this installation and read the licence agreement before resuming the installation.
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: .................................................................................................... 100% Done.
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Loading Product Information
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: ............................................................... 100% Done.
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Analyzing dependencies 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: ............................................................... 100% Done.
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: -----------------------------------------------------------------------------
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Summary
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Global Settings
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns:     Source: /tmp/cd/Disk1/stage/products.xml
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns:     Oracle Home: /opt/oracle/product/endeca/ToolsAndFrameworks (ToolsandFrameworks)
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns:     Installation Type: Complete Installation
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Product Languages
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns:    English
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Space Requirements
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns:    / Required 929MB (includes 321MB temporary) : Available 44.25GB
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: New Installations (2 products)
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns:    Oracle Commerce Tools and Frameworks With Experience Manager 11.2.0.0.0 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns:    Reference Applications 11.2.0.0.0 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: -----------------------------------------------------------------------------
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Installation in progress (Thursday, April 14, 2016 4:34:21 AM UTC)
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: ...............................................................  38% Done.
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: ...............................................................  77% Done.
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: .....                                                            80% Done.
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Install successful
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Linking in progress (Thursday, April 14, 2016 4:36:53 AM UTC)
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Link successful
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Setup in progress (Thursday, April 14, 2016 4:36:53 AM UTC)
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: ..................Setting the config.xml update
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: .                                             100% Done.
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Setup successful
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Saving inventory (Thursday, April 14, 2016 4:36:55 AM UTC)
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Saving inventory complete
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Configuration complete
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: 
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: End of install phases.(Thursday, April 14, 2016 4:37:15 AM UTC)
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: The installation of Oracle Commerce Tools and Frameworks With Experience Manager was successful.
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: Please check '/opt/oracle/product/oraInventory/logs/silentInstall2016-04-14_04-33-39AM.log' for more details.
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[execute tf sh]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[fix tf permissions]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Tf/Exec[cleanup tf temp]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Tf/File[/etc/profile.d/tf.sh]/ensure: defined content as '{md5}6fd64413d304c725e40d823874c767e8'
+==> default: Notice: /Stage[main]/Endeca::Cas/Exec[extract cas zip]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Cas/Exec[fix cas bin permissions]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Cas/File[/opt/oracle/product/endeca/CAS]/ensure: created
+==> default: Notice: /Stage[main]/Endeca::Cas/File[/tmp/endeca_cas_install_config.properties]/ensure: defined content as '{md5}a6e13c68721bbb3ffcabca17bb602076'
+==> default: Notice: /Stage[main]/Endeca::Cas/Exec[execute cas bin]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Cas/Exec[fix cas permissions]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Cas/Exec[cleanup cas temp]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Cas/File[/etc/profile.d/cas.sh]/ensure: defined content as '{md5}d82d27b799ce1df47266d1f6c4a240c2'
+==> default: Notice: /Stage[main]/Vagrant/Oracle_exec[ALTER SYSTEM SET PROCESSES=150 SCOPE=SPFILE]/statement: defined 'statement' as 'ALTER SYSTEM SET PROCESSES=150 SCOPE=SPFILE'
+==> default: Notice: /Stage[main]/Sqldeveloper/File[/home/vagrant/.sqldeveloper/system4.0.3.16.84/o.jdeveloper.db.connection.12.1.3.2.41.140908.1359/connections.xml]/ensure: defined content as '{md5}d3010058f87216c43c01897d55241750'
+==> default: Notice: /Stage[main]/Endeca::Ps/Exec[execute ps bin]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Ps/Exec[fix ps permissions]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Ps/Exec[cleanup ps temp]/returns: executed successfully
+==> default: Notice: /Stage[main]/Endeca::Ps/File[/etc/profile.d/ps.sh]/ensure: defined content as '{md5}fad55ab23623e89ab46cbaffb2543e84'
+==> default: Notice: /Stage[main]/Endeca::Services/File[/etc/init.d/endeca_tf]/ensure: defined content as '{md5}00f1e411f766ccb96d0616cf1e299cca'
+==> default: Notice: /Stage[main]/Endeca::Services/Service[endeca_tf]/ensure: ensure changed 'stopped' to 'running'
+==> default: Notice: /Stage[main]/Endeca::Services/File[/etc/init.d/endeca_ps]/ensure: defined content as '{md5}fedcf6236c64957be59d5e98051c3301'
+==> default: Notice: /Stage[main]/Endeca::Services/Service[endeca_ps]/ensure: ensure changed 'stopped' to 'running'
+==> default: Notice: /Stage[main]/Endeca::Services/File[/etc/init.d/endeca_cas]/ensure: defined content as '{md5}cdd6a771cfaf074be80fa866c33ec9f3'
+==> default: Notice: /Stage[main]/Endeca::Services/Service[endeca_cas]/ensure: ensure changed 'stopped' to 'running'
+==> default: Notice: /Stage[main]/Weblogic::Domains/Weblogic::Domains::Copyjars[protocol.jar]/File[/opt/oracle/product/middleware12c/user_projects/domains/atg_domain/lib/protocol.jar]/ensure: defined content as '{md5}27f23bdc1e8c9bb7fef7429ac5218968'
+==> default: Notice: /Stage[main]/Weblogic::Nodemanager/Orawls::Nodemanager[atgdomainnodemanager]/File[nodemanager.properties ux 1212 atgdomainnodemanager]/content: content changed '{md5}eabfa10bd8d1cde36f21bf5b4a3727b6' to '{md5}5f456a49a898ccbb0d536a145343fb85'
+==> default: Notice: /Stage[main]/Weblogic::Nodemanager/Orawls::Nodemanager[atgdomainnodemanager]/File[nodemanager.properties ux 1212 atgdomainnodemanager]/mode: mode changed '0640' to '0775'
+==> default: Notice: /Stage[main]/Weblogic::Nodemanager/Orawls::Nodemanager[atgdomainnodemanager]/Exec[startNodemanager atgdomainnodemanager]/returns: executed successfully
+==> default: Error: /Stage[main]/Weblogic::Nodemanager/Orawls::Nodemanager[atgdomainnodemanager]/Sleep[wake up atgdomainnodemanager]: Failed to call refresh: 
+==> default: Error: /Stage[main]/Weblogic::Nodemanager/Orawls::Nodemanager[atgdomainnodemanager]/Sleep[wake up atgdomainnodemanager]: 
+==> default: Java HotSpot(TM) 64-Bit Server VM warning: 
+==> default: ignoring option MaxPermSize=256m; support was removed in 8.0
+==> default: Notice: /Stage[main]/Weblogic::Startwlsadmin/Orawls::Control[startAtgDomainAdminServer]/Wls_adminserver[startAtgDomainAdminServer:AdminServer]/ensure: ensure changed 'stop' to 'start'
+==> default: Notice: /Stage[main]/Weblogic::Updatedomain/Wls_domain[atg_domain]/jta_transaction_timeout: jta_transaction_timeout changed '30' to '1000'
+==> default: Notice: /Stage[main]/Weblogic::Machines/Wls_machine[Node1]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Managedservers/Wls_server[atg_live]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Managedservers/Wls_server[atg_ca]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Datasources/Wls_datasource[ATGCatbDS]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Datasources/Wls_datasource[ATGCataDS]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Datasources/Wls_datasource[ATGCaDS]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Datasources/Wls_datasource[ATGCoreDS]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Clusters/Weblogic::Clusters::Createstartstopscripts[StorefrontCluster]/File[/opt/scripts/wls/startStorefrontCluster.py]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Clusters/Wls_cluster[ManagementCluster]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Clusters/Weblogic::Clusters::Createstartstopscripts[StorefrontCluster]/File[/opt/scripts/wls/stopStorefrontCluster.py]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Clusters/Weblogic::Clusters::Createstartstopscripts[ManagementCluster]/File[/opt/scripts/wls/startManagementCluster.py]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Clusters/Weblogic::Clusters::Createstartstopscripts[ManagementCluster]/File[/opt/scripts/wls/stopManagementCluster.py]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Clusters/Wls_cluster[StorefrontCluster]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Deployments/Createdeployscripts[Storefront]/File[/opt/scripts/wls/deployStorefront.py]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Deployments/Createdeployscripts[Storefront]/File[/opt/scripts/wls/deployStorefront.sh]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Deployments/Createdeployscripts[Management]/File[/opt/scripts/wls/deployManagement.py]/ensure: created
+==> default: Notice: /Stage[main]/Weblogic::Deployments/Createdeployscripts[Management]/File[/opt/scripts/wls/deployManagement.sh]/ensure: created
+==> default: Notice: Finished catalog run in 2549.14 seconds
