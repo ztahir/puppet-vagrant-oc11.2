@@ -38,7 +38,7 @@ Email <a.s.nagarajan@gmail.com>
 
 ## Needed Software Installables
 
-- Software installables to be made available in the /Software mount point - folder corresponding to /Users/Naga/Downloads/Commerce11  in the host machine (refer to **vagrant_config.tmp.yaml**)
+- Software installables to be made available in the /Software mount point - folder corresponding to /Users/Naga/Downloads/Commerce11.2  in the host machine (refer to **vagrant_config.tmp.yaml**)
 
 | # | Software Name | Installable |
 | --- | :----------- | :---------- |
@@ -60,7 +60,7 @@ Email <a.s.nagarajan@gmail.com>
 
 - Download and install Oracle VirtualBox (latest version should be fine)
 - Download and install Vagrant (latest version should be fine)
-- Download all the necessary software (To Be Installed - see table above) and place it in a folder in your host machine. The Software listed above are all available [here](http://ppl.ug/LPZQYuf_xMI/) including the basebox 
+- Download all the necessary software (To Be Installed - see table above) and place it in a folder in your host machine. 
 - Download the base box (an Oracle Enterprise Linux 6.6 OS) for Vagrant manually from [here](https://www.dropbox.com/s/f5jk8tym60efisp/oel66.box?dl=0)(if not done already) and add it to vagrant boxes list using the following command
 ```
 vagrant box add --name <<name>> <<path to the box file>>
@@ -79,19 +79,16 @@ vagrant up
 ## Planned for future
 
 - Support for JBoss EAP
-- Installing Commerce Reference Store 11.1
+- Installing Commerce Reference Store 11.2
+- Installing Commerce Store Accelerator 11.2
 
 ## References / Appendix
 
 - Want to know more about **Vagrant**? Please read about vagrant [here](https://www.vagrantup.com/)
 - Want to know more about **Puppet**, Please read about what puppet has to offer [here](https://puppetlabs.com/)
 - Want to know more about **VirtualBox**, Please read the documentation [here](https://www.virtualbox.org/)
-- Want to know Whats new in Oracle Commerce 11.1, Read it [here](http://www.oracle.com/technetwork/apps-tech/commerce/overview/oc-11-1-0-whatsnew-2245182.pdf)
-- For Oracle Commerce Supported Environments Matrix, Click [here](https://support.oracle.com/epmos/faces/DocumentDisplay?id=1908576.1)
-- [ATG Commerce Documentation](http://www.oracle.com/technetwork/documentation/atgwebcommerce-393465.html)
-- [Endeca Guided Search Documentation](http://www.oracle.com/technetwork/indexes/documentation/endecaguidedsearch-1552767.html)
 
 ## Issues / Feedback
 
-- Please feel free to raise any issues that you find [here](https://github.com/nagaseshadri/puppet-vagrant-oc11.1/issues/new), I will try and look at it ASAP
+- Please feel free to raise any issues that you find [here](https://github.com/nagaseshadri/puppet-vagrant-oc11.2/issues/new), I will try and look at it ASAP
 - Please provide your valuable feedback / improvements by writing to me at the email provided above, you can also write me if you need help with setting up your managed environment using the same configs, I am happy to help wherever needed.
