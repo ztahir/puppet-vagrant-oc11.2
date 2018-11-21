@@ -1,9 +1,5 @@
 ## Oracle Commerce VM + Managed Environments - Vagrant + Puppet
 
-Created by **Naga**rajan Seshadri  
-Email <a.s.nagarajan@gmail.com>  
-[Github homepage](https://github.com/nagaseshadri/puppet-vagrant-oc11.2)
-
 ## Supported Environments
 
 - MacOSX
@@ -42,8 +38,8 @@ Email <a.s.nagarajan@gmail.com>
 
 | # | Software Name | Installable |
 | --- | :----------- | :---------- |
-| 1 | JDK | jdk-8u60-linux-x64.tar.gz |
-| 2 | Gradle | gradle-2.12-all.zip |
+| 1 | JDK | jdk-8u65-linux-x64.gz |
+| 2 | Gradle | gradle-2.14.1-all.zip |
 | 3 | ATG 11.2 | V78217-01.zip |
 | 4 | Endeca CAS 11.2 | V78204-01.zip |
 | 5 | Endeca Tools & Frameworks 11.2 | V78229-01.zip |
@@ -51,8 +47,8 @@ Email <a.s.nagarajan@gmail.com>
 | 7 | Endeca Platform Service 11.2 | V78226-01.zip |
 | 8 | Eclipse Mars | eclipse-jee-mars-2-linux-gtk-x86_64.tar.gz |
 | 9 | Oracle XE 11gR2 | oracle-xe-11.2.0-1.0.x86_64.rpm.zip |
-| 10 | SQL Developer 4.0.3.16| sqldeveloper-4.0.3.16.84-1.noarch.rpm |
-| 11 | Oracle Weblogic 12c | wls_121200.jar |
+| 10 | SQL Developer 4.0.3.16| sqldeveloper-4.1.3.20.78-1.noarch.rpm |
+| 11 | Oracle Weblogic 12c | wls_121300.jar |
 | 12 | Oracle JDBC Driver | ojdbc6.jar |
 | 13 | ATG DAS Protocol.jar | protocol.jar |
 
